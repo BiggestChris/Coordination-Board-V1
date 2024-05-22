@@ -4,18 +4,26 @@
 {% endblock %}
 {% block content %}
     
-    <h1>NEWS Summary</h1>
+    <h1>NEWS Download</h1>
 
     <div>
+        {% for row in data %}
         <div class="container-lg">
-
+            <h3>{{ row['category'] }}:</h3>
+            <ul>
+                <li>NEWS 0: {{ row['score1'] }}</li>
+                <li>NEWS 1-4: {{ row['score2'] }}</li>
+                <li>NEWS 5-6: {{ row['score3'] }}</li>
+                <li>NEWS 7+: {{ row['score4'] }}</li>
+            </ul>
         </div>
-        <div class="container-lg">
+        {% endfor %}
 
-        </div>
-        <div class="container-lg">
+        <h1>Download Data</h1>
+        <form method="POST">
+            <button type="submit">Download</button>
+        </form>
 
-        </div>
     </div>
 
 {% endblock %}
